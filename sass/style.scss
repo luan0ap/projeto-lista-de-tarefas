@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    --moz-box-sizing: border-box;
+    --webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+$colorWhite: #fff;
+
+$widthDesktop: 900px;
+@mixin desktop () {
+    @media (min-width: #{$widthDesktop}) {
+        @content;
+    }
+}
+
+body, html{
+    height: 100vh;
+    display: block;
+    background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+    
+
+
+    .main {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        padding-bottom: 50px;
+
+        .container {
+            width: 90%;
+            height: auto;
+            margin: auto;
+
+            @include desktop {
+                width: 50%;
+            }
+            
+
+            .h1 {
+                font-family: 'Righteous', cursive;
+                color: $colorWhite;
+                text-align: center;
+                font-variant: small-caps;
+                letter-spacing: 4px;
+                padding-top: 50px;
+                font-size: 20px;
+
+                @include desktop {
+                    font-size: 35px;
+                }
+            }
+
+            .h2 {
+                font-family: 'Righteous', cursive;
+                color: $colorWhite;
+                text-align: center;
+                font-variant: small-caps;
+                letter-spacing: 4px;
+                padding-top: 20px;
+                font-size: 18px;
+
+                @include desktop {
+                    font-size: 20px;
+                }
+            }
+
+            .div-container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin: 20px auto; 
+                
+
+                .input {
+                    width: 68%;
+                    height: 35px;
+                }
+    
+                .btn {
+                    width: 16%;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    border: none;
+                    color: $colorWhite;
+                    font-weight: bold;
+                    transition: .3s;
+                    background: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+                    font-size: 14px;
+                    margin-left: 3px;
+                    
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                    
+                }
+
+            }
+
+            .ul {
+                list-style: none;
+                color: $colorWhite;
+                font-weight: bold;
+                font-family: 'Righteous', cursive;
+
+                li {
+                    padding: 9px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: .3s;
+                    margin-bottom: 10px;
+                    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+                    background-blend-mode: screen;
+                }
+
+                .efeito-li {
+                    padding: 9px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: .3s;
+                    margin-bottom: 10px;
+                    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+                }
+            }
+        }
+    }
+
+}
