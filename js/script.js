@@ -1,11 +1,9 @@
 (function() {
-
     let $input = document.querySelector("input");
     let $btn = document.querySelector(".btn1");
     let $btn2 = document.querySelector(".btn2");
     let $ul = document.querySelector("ul");
     let $lis = $ul.querySelectorAll("li");
-    
 
     $btn.addEventListener('click', addLi);
     $input.addEventListener("keyup", e => {
@@ -27,9 +25,9 @@
     function addLi() {
         let li = document.createElement("li");
         let inputValue = document.createTextNode($input.value)
-    
+        
         li.appendChild(inputValue);
-        $ul.appendChild(li);
+        $ul.appendChild(li)
     
         $input.value = "";
         $input.focus();
